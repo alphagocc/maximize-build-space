@@ -63,7 +63,7 @@ jobs:
       fail-fast: false
       matrix:
         os:
-          - ubuntu-lateset
+          - ubuntu-latest
         remove-android:
           - 'true'
           - 'false'
