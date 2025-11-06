@@ -63,8 +63,7 @@ jobs:
       fail-fast: false
       matrix:
         os:
-          - ubuntu-20.04
-          - ubuntu-22.04
+          - ubuntu-lateset
         remove-android:
           - 'true'
           - 'false'
@@ -162,7 +161,7 @@ jobs:
 
     steps:
       - name: Download single reports
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v5
         with:
           name: disk-space-report-single
           path: ${{ env.REPORT_DIR }}
@@ -174,7 +173,7 @@ jobs:
           cat ${REPORT_DIR}/*.txt >> "${REPORT_DIR}/${REPORT_FILE}"
 
       - name: Upload collected report
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v5
         with:
           name: disk-space-report-markdown
           path: ${{ env.REPORT_DIR }}/${{ env.REPORT_FILE }}
